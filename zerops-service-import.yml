@@ -1,5 +1,0 @@
-services:
-  - hostname: mailpit
-    type: alpine@3.20
-    buildFromGit: https://github.com/zeropsio/recipe-mailpit
-    enableSubdomainAccess: true

@@ -1,11 +1,22 @@
-# Zerops + Mailpit
-
-Import as a service to an existing Zerops project.
+# TODO
 
 ```yaml
-services:
-  - hostname: mailpit
-    type: alpine@3.20
-    buildFromGit: https://github.com/zeropsio/recipe-mailpit
-    enableSubdomainAccess: true
+zerops:
+  - setup: mailpit
+    build:
+      buildCommands:
+        - sh download-mailpit.sh
+      deployFiles: ./mailpit
+    deploy:
+      readinessCheck:
+        httpGet:
+          port: 8025
+          path: /
+    run:
+      base: alpine@latest
+      ports:
+        - port: 8025
+          httpSupport: true
+        - port: 1025
+      start: ./mailpit
 ```

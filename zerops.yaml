@@ -10,7 +10,7 @@ zerops:
           port: 8025
           path: /
     run:
-      base: alpine@3.20
+      base: alpine@latest
       ports:
         - port: 8025
           httpSupport: true
