@@ -1,18 +1,28 @@
 zerops:
+  # Simple utility service. Download and run
+  # the https://github.com/axllent/mailpit.
   - setup: mailpit
     build:
+      base: alpine@latest
       buildCommands:
         - sh download-mailpit.sh
+      # Deploy the downloaded binary.
       deployFiles: ./mailpit
+    # Check that the Mailpit is running correctly,
+    # after it was deployed.
     deploy:
       readinessCheck:
         httpGet:
           port: 8025
           path: /
     run:
+      # No required runtime dependencies.
       base: alpine@latest
       ports:
+        # Define port with 'httpSupport=true' for web UI.
         - port: 8025
           httpSupport: true
+        # SMTP sink port.
         - port: 1025
+      # Run the downloaded binary.
       start: ./mailpit
