@@ -1,5 +1,7 @@
+<!-- #ZEROPS_EXTRACT_START:utility-service-tag# -->
 > [!NOTE]
 > This recipe app is one of our _single-service utility apps_ - standalone and reusable services, that can be easily imported to any project.
+<!-- #ZEROPS_EXTRACT_END:utility-service-tag# -->
 
 ### 1. Import the Service
 
