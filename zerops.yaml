@@ -3,7 +3,7 @@ zerops:
   # the https://github.com/axllent/mailpit.
   - setup: mailpit
     build:
-      base: alpine@latest
+      base: alpine@3.21
       buildCommands:
         - sh download-mailpit.sh
       # Deploy the downloaded binary.
@@ -17,7 +17,7 @@ zerops:
           path: /
     run:
       # No required runtime dependencies.
-      base: alpine@latest
+      base: alpine@3.21
       ports:
         # Define port with 'httpSupport=true' for web UI.
         - port: 8025
