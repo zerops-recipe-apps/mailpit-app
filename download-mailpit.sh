@@ -1,7 +1,7 @@
 #!/bin/sh
 
 GH_REPO="axllent/mailpit"
-VERSION="${MAILPIT_VERSION:-v1.31.1}"
+VERSION="${MAILPIT_VERSION:-v1.31.5}"
 TIMEOUT=90
 
 # Detect architecture
